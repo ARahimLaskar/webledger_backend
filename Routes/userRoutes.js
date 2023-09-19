@@ -9,7 +9,11 @@ const userRoutes = Router();
 
 userRoutes.post("/signup", async (req, res) => {
   const { name, email, password } = req.body;
+
   try {
+    if (!name || !email || !password) {
+      return res.status(200).json({ msg: "enter all credientials" });
+    }
     const existingUser = await UserModel.findOne({ email });
     if (existingUser) {
       return res.status(200).json({ message: "User already exist" });
