@@ -1,7 +1,6 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
-
 const { connection } = require("./ConfigDataBase/db.js");
 const userRoutes = require("./Routes/userRoutes.js");
 const findFoodRoute = require("./Routes/findFoodRoute.js");
